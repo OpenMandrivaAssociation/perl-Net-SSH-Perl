@@ -28,6 +28,7 @@ BuildRequires:	perl(Digest::MD5)
 BuildRequires:  perl(Digest::BubbleBabble)
 BuildRequires:  perl(Crypt::RSA)
 BuildArch:      noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Net::SSH::Perl is an all-Perl module implementing an SSH
