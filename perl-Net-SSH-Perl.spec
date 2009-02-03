@@ -1,6 +1,6 @@
 %define	module	Net-SSH-Perl
 %define	name	perl-%{module}
-%define	version	1.33
+%define	version	1.34
 %define	release	%mkrel 1
 
 Name:		%{name}
