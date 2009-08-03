@@ -1,16 +1,16 @@
-%define	module	Net-SSH-Perl
-%define	name	perl-%{module}
-%define	version	1.34
-%define	release	%mkrel 1
+%define	upstream_name	 Net-SSH-Perl
+%define	upstream_version 1.34
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl client Interface to SSH
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}/
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
@@ -28,7 +28,7 @@ BuildRequires:	perl(Digest::MD5)
 BuildRequires:  perl(Digest::BubbleBabble)
 BuildRequires:  perl(Crypt::RSA)
 BuildArch:      noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Net::SSH::Perl is an all-Perl module implementing an SSH
@@ -36,7 +36,7 @@ Net::SSH::Perl is an all-Perl module implementing an SSH
 and SSH-2 protocols.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor < /dev/null
@@ -58,4 +58,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Net
 %{_mandir}/man*/*
-
