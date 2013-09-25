@@ -1,15 +1,15 @@
 %define	upstream_name	 Net-SSH-Perl
-%define upstream_version 1.35
+%define upstream_version 1.36
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 1.35
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Perl client Interface to SSH
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Net/Net-SSH-Perl-1.35.tar.gz
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Net/Net-SSH-Perl-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(MIME::Base64)
@@ -123,5 +123,6 @@ perl Makefile.PL INSTALLDIRS=vendor < /dev/null
 
 * Sun Nov 09 2003 Arnaud de Lorbeau <adelorbeau@mandrakesoft.com> 1.23-1mdk
 - First MandrakeSoft Package
+
 
 
