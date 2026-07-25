@@ -1,16 +1,16 @@
 %define	upstream_name	 Net-SSH-Perl
-%define upstream_version 1.37
+%define upstream_version 2.144
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Perl client Interface to SSH
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/briandfoy/net-ssh-perl
+Source0:	https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Net-SSH-Perl-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
