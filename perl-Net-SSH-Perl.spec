@@ -1,16 +1,14 @@
 %define	upstream_name	 Net-SSH-Perl
-%define upstream_version 2.144
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	2.144
+Release:	2
 
 Summary:	Perl client Interface to SSH
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/briandfoy/net-ssh-perl
-Source0:	https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Net-SSH-Perl-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Net-SSH-Perl-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -35,7 +33,7 @@ Net::SSH::Perl is an all-Perl module implementing an SSH
 and SSH-2 protocols.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor < /dev/null
